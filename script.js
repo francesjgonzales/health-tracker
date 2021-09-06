@@ -1,51 +1,47 @@
-//declare variable for list and fetch data using querySelectorAll
-const nameList = document.querySelectorAll('.name-list li');
-const text = document.querySelector(".text");
-const textChange = document.querySelector(".changeMe");
-const myListInput = document.querySelector(".addText");
-const addBtn = document.querySelector(".addListBtn");
+var selectedRow = null
 
-// access class in CSS. not impt
-// text.classList.add("blue")
-
-// how to change css using eventlistener
-textChange.addEventListener("click", function () {
-    text.classList.replace("text", "yellow");
-});
-
-
-// list of dom toke listener - https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList
-
-
-const userList = document.querySelector(".name-list");
-
-// console.log(userList);
-
-// to click on each li
-// for (user of userList) (
-//     user.addEventListener("click", function () {
-//         this.style.color = "green"
-//     })
-// )
-
-
-addBtn.addEventListener("click", function () {
-    // create an li
-    const newLi = document.createElement("LI");
-    const liContent = document.createTextNode(myListInput.value);
-
-    // add input value 
-    newLi.appendChild(liContent)
-    // attach li to userlist
-    userList.appendChild(newLi);
-});
-
-
-//how to manipulate each list 
-for (test of nameList) {
-    test.addEventListener('click', function () {
-        //add action here
-        this.style.color = "red";
-    })
+function onFormSubmit() {
+    var formData = readFormData();
+    insertNewRecord(formData);
+    onEdit(td);
 }
 
+function readFormData() {
+    var formData = { };
+    formData["number"] = document.getElementById("number").value;
+    formData["date"] = document.getElementById("date").value;
+    formData["time"] = document.getElementById("time").value;
+    formData["temperature"] = document.getElementById("temperature").value;
+    formData["symptoms"] = document.getElementById("symptoms").value;
+    return formData;
+
+}
+
+function insertNewRecord(data) {
+    var table = document.getElementById("healthTracker").getElementsByTagName('tbody')[0];
+    var newRow = table.insertRow(table.length);
+    cell1 = newRow.insertCell(0);
+    cell1.innerHTML = data.number;
+    cell2 = newRow.insertCell(1);
+    cell2.innerHTML = data.date;
+    cell3 = newRow.insertCell(2);
+    cell3.innerHTML = data.time;
+    cell4 = newRow.insertCell(3);
+    cell4.innerHTML = data.temperature;
+    cell5 = newRow.insertCell(4);
+    cell5.innerHTML = data.symptoms;
+    cell5 = newRow.insertCell(5);
+    cell5.innerHTML = `<button onClick="onEdit(this)"> Edit </button>
+                        <button onClick="onDelete(this)"> Delete </button>`;
+
+}
+
+function onEdit(td) {
+    selectedRow = td.parentElement.parentElement;
+    document.getElementById("number").value = selectedRow.cells[0].innerHTML;
+    document.getElementById("date").value = selectedRow.cells[1].innerHTML;
+    document.getElementById("time").value = selectedRow.cells[2].innerHTML;
+    document.getElementById("temperature").value = selectedRow.cells[3].innerHTML;
+    document.getElementById("symptoms").value = selectedRow.cells[4].innerHTML;
+
+}

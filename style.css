@@ -1,3 +1,9 @@
+* {
+    margin: 5px;
+    padding: 5px;
+    box-sizing: border-box;
+  }
+
 .blue {
     font-size: h1;
     color: aqua;

@@ -2,7 +2,10 @@ var selectedRow = null
 
 function onFormSubmit() {
     var formData = readFormData();
-    insertNewRecord(formData);
+    if (selectedRow == null)
+        insertNewRecord(formData);
+    else
+        updateRecord(formData)
     resertForm();
 }
 
@@ -39,8 +42,10 @@ function insertNewRecord(data) {
 function resertForm() {
     document.getElementById("number").value = "";
     document.getElementById("date").value = "";
+    document.getElementById("time").value = "";
     document.getElementById("temperature").value = "";
     document.getElementById("symptoms").value = "";
+    selectedRow = null;
 }
 
 function onEdit(td) {
@@ -56,14 +61,16 @@ function onEdit(td) {
 function updateRecord(formData) {
     selectedRow.cells[0].innerHTML = formData.number;
     selectedRow.cells[1].innerHTML = formData.date;
-    selectedRow.cells[2].innerHTML = formData.temperature;
-    selectedRow.cells[3].innerHTML = formData.symptoms;
+    selectedRow.cells[2].innerHTML = formData.time;
+    selectedRow.cells[3].innerHTML = formData.temperature;
+    selectedRow.cells[4].innerHTML = formData.symptoms;
 }
 
 function onDelete(td) {
     if (confirm('Delete Item?')) {
         row = td.parentElement.parentElement;
-        document.getElementById("healthtracker").deleteRow(row.rowIndex);
+        document.getElementById("healthTracker").deleteRow(row.rowIndex);
         resertForm();
     }
 }
+

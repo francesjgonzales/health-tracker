@@ -1,5 +1,6 @@
 var selectedRow = null
 
+//adding localStorage
 function onFormSubmit() {
     var formData = readFormData();
     if (selectedRow == null)
@@ -7,7 +8,14 @@ function onFormSubmit() {
     else
         updateRecord(formData)
     resertForm();
+
+    var formData_serialised = JSON.stringify(formData);
+    localStorage.setItem("formData", formData_serialised);
+
+    var formData_deserialised = JSON.parse(localStorage.getItem("formData"));
+    console.log(formData_deserialised)
 }
+
 
 function readFormData() {
     var formData = {};
@@ -17,8 +25,8 @@ function readFormData() {
     formData["temperature"] = document.getElementById("temperature").value;
     formData["symptoms"] = document.getElementById("symptoms").value;
     return formData;
-
 }
+
 
 function insertNewRecord(data) {
     var table = document.getElementById("healthTracker").getElementsByTagName('tbody')[0];

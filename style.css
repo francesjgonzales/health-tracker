@@ -14,3 +14,7 @@
     font-size: h1;
     color: yellowgreen;
 }
+
+#update-btn {
+    display: none;
+}

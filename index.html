@@ -1,89 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-  
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous"> -->
+
   <link rel="stylesheet" href="./style.css">
-  
+  <link rel="icon" type="image/x-icon" href="/img/heart-pulse-solid.svg">
 
-  <title>Document</title>
+
+  <title>Health Tracker</title>
 </head>
+
 <body>
-  <table>
-    <form onsubmit="event.preventDefault(); onFormSubmit();" autocomplete="off">
+  <div class="container">
+    <table class="center">
+      <form onsubmit="event.preventDefault(); onFormSubmit();" autocomplete="off">
+        <div class="container">
+          <tr>
+            <td>
+              <div>
+                <label>No.</label>
+                <input type="number" name="number" min="1" max="100" id="number">
+              </div>
+            </td>
+            <td>
+              <div>
+                <label>Full Name</label>
+                <input type="text" name="patient" id="pname">
+              </div>
+            </td>
+            <td>
+              <div>
+                <label>Date</label>
+                <input type="date" name="date" id="date">
+              </div>
+            </td>
+
+            <td>
+              <div>
+                <label>Time</label>
+                <input type="time" name="time" id="time">
+              </div>
+            </td>
+
+            <td>
+              <div>
+                <label>Temperature &#8451;</label>
+                <input type="number" name="temperature" min="34" max="50" step="0.10" id="temperature" placeholder="34">
+              </div>
+            </td>
+
+            <td>
+              <div>
+                <label>Symptoms</label>
+                <input type="text" name="symptoms" id="symptoms">
+              </div>
+            </td>
+
+            <td id="unique">
+              <div>
+                <label>Patient ID</label>
+                <input type="text" name="patientId" id="patientId">
+              </div>
+            </td>
+
+          </tr>
+          <tr>
+            <td>
+              <div id="submit-btn">
+                <span><input type="submit" value="Submit"></span>
+                <span><input type="reset" value="Reset"></span>
+              </div>
+              <div id="update-btn">
+                <span><input type="button" value="Update"></span>
+              </div>
+            </td>
+          </tr>
+        </div>
+      </form>
+    </table>
+
+
+    <table class="table center" id="healthTracker">
       <div class="container">
-        <tr>
-          <td>
-            <div>
-              <label>NO.</label>
-              <input type="number" name="number" min="1" max="100" id="number">
-            </div>           
-          </td>          
-          <td>
-            <div>
-              <label>Date</label>
-              <input type="date" name="date" id="date">
-            </div>           
-          </td>
-          
-          <td>
-            <div>
-              <label>Time</label>
-              <input type="time" name="time" id="time">
-            </div>           
-          </td>
-          
-          <td>
-            <div>
-              <label>Temperature</label>
-              <input type="number" name="temperature" min="34" max="50" step="0.01" id="temperature">
-            </div>           
-          </td>
-          
-          <td>
-            <div>
-              <label>Symptoms</label>
-              <input type="text" name="symptoms" id="symptoms">
-            </div>           
-          </td>
-          
-        </tr>    
-        <tr>
-          <td>
-            <div class="form-action-buttons"> 
-              <input type="submit" value="Submit">
-            </div>
-          </td>
-        </tr>
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Date</th>
+            <th scope="col">Time</th>
+            <th scope="col">Temperature &#8451;</th>
+            <th scope="col">Symptoms</th>
+            <th scope="col">Patient ID</th>
+            <th scope="col">Update</th>
+          </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
       </div>
-    </form>
-  </table>
+    </table>
 
-  <table class="table" id="healthTracker">
-    <div class="container">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Date</th>
-          <th scope="col">Time</th>
-          <th scope="col">Temperature</th>
-          <th scope="col">Symptoms</th>
-          <th scope="col">Update</th>
-        </tr>
-      </thead>
-      <tbody>
+  </div>
 
-      </tbody>
-    </div>
-  </table>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-<script src="./script.js"></script>
-  
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+    crossorigin="anonymous"></script>
+  <script src="./script.js"></script>
+
 </body>
+
 </html>

@@ -1,5 +1,7 @@
 # Health Tracker (personal project)
 
+View live site [here](https://health-tracker-site.netlify.app/)
+
 ## About this project
 
 I took reference from _LearningZity's_ youtube tutorial while learning CRUD in Javascript. Without the use of any frameworks from CSS or Javascript.

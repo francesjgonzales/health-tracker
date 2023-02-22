@@ -8,7 +8,6 @@ document.getElementById('number').value = i - 1;
 
 
 //create uid
-//create uid
 var bdayId = document.getElementById("date").value; //get the value 
 var bdayString = bdayId.substring(2, 4);  //get the last 2 digit of birthyEAR
 var bdayCode = bdayString.codePointAt(0); //get the code point at the first character
@@ -33,7 +32,7 @@ function onFormSubmit() {
         insertNewRecord(formData);
     else
         updateRecord(formData)
-    resertForm();
+    resetForm();
 
     var formData_serialised = JSON.stringify(formData);
     localStorage.setItem("formData", formData_serialised);
@@ -114,7 +113,7 @@ function insertNewRecord(data) {
 
 }
 
-function resertForm() {
+function resetForm() {
     document.getElementById("number").value = "";
     document.getElementById("pname").value = "";
     document.getElementById("date").value = "";
@@ -123,7 +122,10 @@ function resertForm() {
     document.getElementById("symptoms").value = "";
     document.getElementById("patientId").value = "";
     selectedRow = null;
+    
 }
+
+
 
 function onEdit(td) {
     selectedRow = td.parentElement.parentElement;
@@ -134,7 +136,6 @@ function onEdit(td) {
     document.getElementById("temperature").value = selectedRow.cells[4].innerHTML;
     document.getElementById("symptoms").value = selectedRow.cells[5].innerHTML;
     document.getElementById("patientId").value = selectedRow.cells[6].innerHTML;
-    
 }
 
 function updateRecord(formData) {
@@ -145,14 +146,13 @@ function updateRecord(formData) {
     selectedRow.cells[4].innerHTML = formData.temperature;
     selectedRow.cells[5].innerHTML = formData.symptoms;
     selectedRow.cells[6].innerHTML = formData.patientId;
+/*     resertForm(); */
 }
 
 function onDelete(td) {
     if (confirm('Delete Item?')) {
         row = td.parentElement.parentElement;
         document.getElementById("healthTracker").deleteRow(row.rowIndex);
-        resertForm();
+        resetForm();
     }
 }
-
-

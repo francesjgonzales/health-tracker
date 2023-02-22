@@ -20,7 +20,7 @@
 <body>
   <div class="container">
     <table class="center">
-      <form onsubmit="event.preventDefault(); onFormSubmit();" autocomplete="off">
+      <form onsubmit="event.preventDefault(); onFormSubmit();" autocomplete="off" id="input">
         <div class="container">
           <tr>
             <td>
@@ -74,7 +74,7 @@
             <td>
               <div id="submit-btn">
                 <span><input type="submit" value="Submit"></span>
-                <span><input type="reset" value="Reset"></span>
+                <span><input type="reset" value="Reset" onclick=resetForm()></span>
               </div>
               <div id="update-btn">
                 <span><input type="button" value="Update"></span>

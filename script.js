@@ -1,15 +1,29 @@
 //Global variables
 var selectedRow = null; 
 
-//for auto display of current 'number'
+//to display current 'number' on page load or after submit
 var i = 0; 
 i++;
 document.getElementById('number').value = i - 1;
 
 
 //create uid
-var uniqueNumber=(new Date().getTime()).toString(16);
-document.getElementById('patientId').value = uniqueNumber;
+//create uid
+var bdayId = document.getElementById("date").value; //get the value 
+var bdayString = bdayId.substring(2, 4);  //get the last 2 digit of birthyEAR
+var bdayCode = bdayString.codePointAt(0); //get the code point at the first character
+
+var age = new Date().getFullYear() - bdayId.substring(0,4); //get patient's current age
+
+var dateUnique=(new Date().getTime()).toString(16);
+var dateUID = dateUnique.slice(7,10); //slice to 6th and 7th char
+
+var stringId = document.getElementById("pname").value; //get the value
+var strId = stringId.substring(0,2); //convert to
+var strUniqueId = strId.charCodeAt(1); //
+
+//final UID
+var uid = bdayString + '-' + bdayCode + '-' + dateUID + '-' + strUniqueId + '-' + age;
 
 
 //adding localStorage
@@ -67,9 +81,30 @@ function insertNewRecord(data) {
     cell6.innerHTML = data.symptoms;
 
     //create uid
-    var uniqueNumber=(new Date().getTime()).toString(16);
+    var bdayId = document.getElementById("date").value; //get the value 
+    var bdayString = bdayId.substring(2, 4);  //get the last 2 digit of birthyEAR
+    var bdayCode = bdayString.codePointAt(0); //get the code point at the first character
+
+    var age = new Date().getFullYear() - bdayId.substring(0,4); //get patient's current age
+
+    var dateUnique=(new Date().getTime()).toString(16);
+    var dateUID = dateUnique.slice(7,10); //slice to 6th and 7th char
+
+    var stringId = document.getElementById("pname").value; //get the value
+    var strId = stringId.substring(0,2); //convert to
+    var strUniqueId = strId.charCodeAt(1); //
+
+    //final UID
+    var uid = bdayString + '-' + bdayCode + '-' + dateUID + '-' + strUniqueId + '-' + age;
+
     cell7 = newRow.insertCell(6);
-    cell7.innerHTML = document.getElementById('patientId').value = uniqueNumber;
+    cell7.innerHTML = uid;
+
+
+    /* UID CODE based on Date */
+    /* var uniqueNumber=(new Date().getTime()).toString(16);
+    cell7 = newRow.insertCell(6);
+    cell7.innerHTML = document.getElementById('patientId').value = uniqueNumber; */
     /* console.log(uniqueNumber);    */ 
     
     

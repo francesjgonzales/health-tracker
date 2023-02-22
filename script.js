@@ -39,6 +39,7 @@ function onFormSubmit() {
 
     var formData_deserialised = JSON.parse(localStorage.getItem("formData"));
     console.log(formData_deserialised)
+    
 }
 
 
@@ -122,6 +123,8 @@ function resetForm() {
     document.getElementById("symptoms").value = "";
     document.getElementById("patientId").value = "";
     selectedRow = null;
+    var submitBtn = document.getElementById("submit-btn");
+    submitBtn.style.display = "block";
     
 }
 
@@ -136,6 +139,13 @@ function onEdit(td) {
     document.getElementById("temperature").value = selectedRow.cells[4].innerHTML;
     document.getElementById("symptoms").value = selectedRow.cells[5].innerHTML;
     document.getElementById("patientId").value = selectedRow.cells[6].innerHTML;
+
+    var submitBtn = document.getElementById("submit-btn");
+    submitBtn.style.display = "none";
+    var updateBtn = document.getElementById("update-btn");
+    updateBtn.innerHTML = `<span><input type="submit" value="Update" onClick=onFormSubmit()></span>`
+
+    
 }
 
 function updateRecord(formData) {
@@ -146,7 +156,8 @@ function updateRecord(formData) {
     selectedRow.cells[4].innerHTML = formData.temperature;
     selectedRow.cells[5].innerHTML = formData.symptoms;
     selectedRow.cells[6].innerHTML = formData.patientId;
-/*     resertForm(); */
+    var submitBtn = document.getElementById("submit-btn");
+    submitBtn.style.display = "block";
 }
 
 function onDelete(td) {

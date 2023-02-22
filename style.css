@@ -2,7 +2,35 @@
     margin: 5px;
     padding: 5px;
     box-sizing: border-box;
-  }
+}
+
+body {
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.table {
+    table-layout: auto;
+    width: 100%;  
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* form style */
+input {
+    height: 6vh;
+}
+
+h2 {
+    font-family: 'Gloock', serif;
+}
 
 .blue {
     font-size: h1;
@@ -13,8 +41,4 @@
 .yellow {
     font-size: h1;
     color: yellowgreen;
-}
-
-#update-btn {
-    display: none;
 }

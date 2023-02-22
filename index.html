@@ -12,76 +12,75 @@
 
   <link rel="stylesheet" href="./style.css">
   <link rel="icon" type="image/x-icon" href="/img/heart-pulse-solid.svg">
-
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Gloock&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,700&display=swap"
+    rel="stylesheet">
   <title>Health Tracker</title>
 </head>
 
 <body>
   <div class="container">
-    <table class="center">
+    <h2 class="text-center">Health Tracker</h2>
+  </div>
+
+  <div class="container">
+    <table class="table center">
       <form onsubmit="event.preventDefault(); onFormSubmit();" autocomplete="off" id="input">
-        <div class="container">
+        <thead>
           <tr>
             <td>
-              <div>
-                <label>No.</label>
-                <input type="number" name="number" min="1" max="100" id="number" readonly>
-              </div>
-            </td>
-            <td>
-              <div>
-                <label>Full Name</label>
-                <input type="text" name="patient" id="pname" required>
-              </div>
-            </td>
-            <td>
-              <div>
-                <label>Date</label>
-                <input type="date" name="date" id="date" required>
-              </div>
-            </td>
-            <td>
-              <div>
-                <label>Time</label>
-                <input type="time" name="time" id="time" required>
-              </div>
-            </td>
-
-            <td>
-              <div>
-                <label>Temperature &#8451;</label>
-                <input type="number" name="temperature" min="34" max="50" step="0.10" id="temperature" required>
-              </div>
-            </td>
-
-            <td>
-              <div>
-                <label>Symptoms</label>
-                <input type="text" name="symptoms" id="symptoms" row="2">
-              </div>
+              <label>No.</label>
+              <input type="number" name="number" min="1" max="100" id="number" readonly>
             </td>
 
             <td id="unique">
-              <div>
-                <label>Patient ID</label>
-                <input type="text" name="patientId" id="patientId" readonly>
-              </div>
+              <label>Patient ID</label>
+              <input type="text" name="patientId" id="patientId" readonly>
+            </td>
+          </tr>
+          <tr>
+
+            <td>
+              <label>Full Name</label>
+              <input type="text" name="patient" id="pname" required>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>Birth Date</label>
+              <input type="date" name="date" id="date" required>
+            </td>
+            <td>
+              <label>Time</label>
+              <input type="time" name="time" id="time" required>
             </td>
 
+          <tr>
+            <td>
+              <label>Temp &#8451;</label>
+              <input type="number" name="temperature" min="34" max="50" step="0.10" id="temperature" required>
+            </td>
+            <td>
+              <label>Symptoms</label>
+              <input type="text" name="symptoms" id="symptoms" row="2">
+            </td>
+          </tr>
           </tr>
           <tr>
             <td>
               <div id="submit-btn">
                 <span><input type="submit" value="Submit"></span>
-                <span><input type="reset" value="Reset" onclick=resetForm()></span>
               </div>
               <div id="update-btn">
-                <span><input type="button" value="Update"></span>
+                <!-- <span><input type="submit" value="Update"></span> -->
               </div>
+              <span><input type="reset" value="Reset" onclick=resetForm()></span>
             </td>
           </tr>
-        </div>
+
+        </thead>
       </form>
     </table>
 
@@ -94,7 +93,7 @@
             <th scope="col">Name</th>
             <th scope="col">Date</th>
             <th scope="col">Time</th>
-            <th scope="col">Temperature &#8451;</th>
+            <th scope="col">Temp &#8451;</th>
             <th scope="col">Symptoms</th>
             <th scope="col">Patient ID</th>
             <th scope="col">Update</th>

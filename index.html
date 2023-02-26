@@ -21,9 +21,11 @@
 </head>
 
 <body>
-  <div class="container">
-    <h2 class="text-center">Health Tracker</h2>
+  <div class="container text-center">
+    <h2>Health Tracker</h2>
+    <p>Fill up the coloured fields</p>
   </div>
+
 
   <div class="container">
     <table class="table center">
@@ -37,24 +39,38 @@
 
             <td id="unique">
               <label>Patient ID</label>
-              <input type="text" name="patientId" id="patientId" readonly>
+              <input class="text-center" type="text" name="patientId" id="patientId" readonly>
             </td>
+
+
           </tr>
           <tr>
 
             <td>
               <label>Full Name</label>
-              <input type="text" name="patient" id="pname" required>
+              <input type="text" name="patient" id="patient" required>
             </td>
+
+            <td>
+              <label>Age</label>
+              <input type="number" name="age" min="1" max="100" id="age" readonly>
+            </td>
+
           </tr>
           <tr>
             <td>
               <label>Birth Date</label>
               <input type="date" name="date" id="date" required>
             </td>
+
             <td>
-              <label>Time</label>
-              <input type="time" name="time" id="time" required>
+              <label>Admission Time</label>
+              <input type="time" name="admission" id="admission" required>
+            </td>
+
+            <td>
+              <label>Medicine</label>
+              <input type="text" name="medicine" id="medicine">
             </td>
 
           <tr>
@@ -64,19 +80,17 @@
             </td>
             <td>
               <label>Symptoms</label>
-              <input type="text" name="symptoms" id="symptoms" row="2">
+              <input type="text" name="symptoms" id="symptoms" row="2" required>
             </td>
           </tr>
           </tr>
           <tr>
             <td>
-              <div id="submit-btn">
-                <span><input type="submit" value="Submit"></span>
+              <div>
+                <span id="submit-btn"><input class="button" type="submit" value="Submit"></span>
+                <span id="update-btn"><input class="button" type="submit" value="Update"></span>
+                <span><input class="button" type="reset" value="Reset" onclick=resetForm()></span>
               </div>
-              <div id="update-btn">
-                <!-- <span><input type="submit" value="Update"></span> -->
-              </div>
-              <span><input type="reset" value="Reset" onclick=resetForm()></span>
             </td>
           </tr>
 
@@ -91,8 +105,10 @@
           <tr>
             <th scope="col">#</th>
             <th scope="col">Name</th>
-            <th scope="col">Date</th>
-            <th scope="col">Time</th>
+            <th scope="col">Age</th>
+            <th scope="col">Birth Date</th>
+            <th scope="col">Admission Time</th>
+            <th scope="col">Medicine</th>
             <th scope="col">Temp &#8451;</th>
             <th scope="col">Symptoms</th>
             <th scope="col">Patient ID</th>

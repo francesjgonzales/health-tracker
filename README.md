@@ -18,6 +18,7 @@ I took reference from _LearningZity's_ youtube tutorial while learning CRUD in V
 2. Auto increment of number in row as new record is submitted
 3. Localstorage session
 4. Create UID using Javascript
+5. Client-server form validation
 
 ## Resources and Credits
 

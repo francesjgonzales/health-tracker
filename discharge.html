@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous"> -->
+
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/x-icon" href="/img/heart-pulse-solid.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gloock&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,700&display=swap"
+        rel="stylesheet">
+    <title>Health Tracker</title>
+</head>
+
+<body>
+    <div class="container text-center">
+        <h2>Health Tracker</h2>
+        <p>Fill up the coloured fields</p>
+    </div>
+
+
+    <div class="container">
+        <table class="table center">
+            <form onsubmit="event.preventDefault(); onFormSubmit();" autocomplete="off" id="input">
+                <thead>
+                    <tr>
+                        <td>
+                            <label>No.</label>
+                            <input type="number" name="number" min="1" max="100" id="number" readonly>
+                        </td>
+
+                        <td id="unique">
+                            <label>Patient ID</label>
+                            <input class="text-center" type="text" name="patientId" id="patientId">
+                        </td>
+
+
+                    </tr>
+                    <tr>
+
+                        <td>
+                            <label>Full Name</label>
+                            <input type="text" name="patient" id="patient" required>
+                        </td>
+
+                        <td>
+                            <label>Age</label>
+                            <input type="number" name="age" min="1" max="100" id="age" readonly>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Birth Date</label>
+                            <input type="date" name="date" id="date" required>
+                        </td>
+
+                        <td>
+                            <label>Admission Time</label>
+                            <input type="time" name="admission" id="admission" required>
+                        </td>
+
+                        <td>
+                            <label>Discharge Patient</label>
+                            <input type="text" name="discharge" id="discharge" readonly>
+                        </td>
+
+                    <tr>
+                        <td>
+                            <label>Temp &#8451;</label>
+                            <input type="number" name="temperature" min="34" max="50" step="0.10" id="temperature"
+                                required>
+                        </td>
+                        <td>
+                            <label>Symptoms</label>
+                            <input type="text" name="symptoms" id="symptoms">
+                        </td>
+                        <td>
+                            <label>Medicine</label>
+                            <textarea><input type="text" name="symptoms" id="symptoms" ></textarea>
+                        </td>
+
+                    </tr>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div>
+                                <span id="submit-btn"><input class="button" type="submit" value="Submit"></span>
+                                <span id="update-btn"><input class="button" type="submit" value="Update"></span>
+                                <span><input class="button" type="reset" value="Reset" onclick=resetForm()></span>
+                            </div>
+                        </td>
+                    </tr>
+
+                </thead>
+            </form>
+        </table>
+
+
+        <table class="table center" id="healthTracker">
+            <div class="container">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Age</th>
+                        <th scope="col">Birth Date</th>
+                        <th scope="col">Admission Time</th>
+                        <th scope="col">Me</th>
+                        <th scope="col">Temp &#8451;</th>
+                        <th scope="col">Symptoms</th>
+                        <th scope="col">Patient ID</th>
+                        <th scope="col">Update</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </div>
+        </table>
+
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
+    <script src="./script.js"></script>
+
+</body>
+
+</html>

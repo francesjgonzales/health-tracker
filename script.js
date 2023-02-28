@@ -125,7 +125,7 @@ function insertNewRecord(data) {
 
     cell10 = newRow.insertCell(9);
     cell10.innerHTML = `<span class="edit" onClick="onEdit(this)">Edit</span>
-                        <span class="discharge" onClick="onDelete(this)"> Discharge Patient </span>`;
+    <span class="discharge" onClick="onDelete(this)"> Discharge </span> `;
 
     var submitBtn = document.getElementById("submit-btn");
     submitBtn.style.display = "none";
@@ -215,7 +215,7 @@ function showTime() {
     if (hour < 10) {
         sec = 0 + sec;
     }
-    document.getElementById('time').innerHTML = hour + '0' + ':' + '0' + min + ':' + sec + '' + '' + checkHour;
+    document.getElementById('time').innerHTML = hour + '0' + ':' + min + ':' + sec + '' + '' + checkHour;
 }
 
 setInterval(showTime,1000); //call time based on per 1 second

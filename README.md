@@ -12,13 +12,14 @@ I took reference from _LearningZity's_ youtube tutorial while learning CRUD in V
 2. CSS
 3. Vanilla Javascript
 
-## Features used
+## Features
 
 1. CRUD of health tracker table
 2. Auto increment of number in row as new record is submitted
 3. Localstorage session
 4. Create UID using Javascript
 5. Client-server form validation
+6. Clock
 
 ## Resources and Credits
 

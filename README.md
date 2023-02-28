@@ -1,10 +1,10 @@
-# Health Tracker (personal project)
+# Patient Tracker (personal project)
 
 View live site [here](https://health-tracker-site.netlify.app/)
 
 ## About this project
 
-I took reference from _LearningZity's_ youtube tutorial while learning CRUD in Vanilla Javascript.
+I took reference from _LearningZity's_ youtube tutorial while learning CRUD in Vanilla Javascript. This project is created to help nurses to keep track of the incoming patients who are about to be admitted in hospital. They use the form above and it results will show in a table format below. Its a simplified form where input fields are color-coded for validity-check, font-size are slightly bigger for easy readability and a clock to keep track of the current time.
 
 ## Technologies used
 

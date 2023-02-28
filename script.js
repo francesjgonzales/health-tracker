@@ -187,7 +187,7 @@ function updateRecord(formData) {
 }
 
 function onDelete(td) {
-    if (confirm('Delete Item?')) {
+    if (confirm('Discharge patient?')) {
         row = td.parentElement.parentElement;
         document.getElementById("healthTracker").deleteRow(row.rowIndex);
         resetForm();

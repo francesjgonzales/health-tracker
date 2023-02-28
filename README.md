@@ -29,3 +29,6 @@ I took reference from _LearningZity's_ youtube tutorial while learning CRUD in V
 5. [Global Object - Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
 6. [Simple way to generate unique ID in Javascript](https://paulius-repsys.medium.com/simplest-possible-way-to-generate-unique-id-in-javascript-a0d7566f3b0c)
 7. [charCodeAt](https://www.w3schools.com/jsref/jsref_charcodeat.asp)
+8. [Clock](https://flexiple.com/javascript/javascript-clock/)
+9. [Grid](https://www.w3schools.com/css/css_grid_item.asp)
+10. [Typography](https://blog.prototypr.io/8-rules-for-perfect-typography-in-ui-21b37f6f23ce)

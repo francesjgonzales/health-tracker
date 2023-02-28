@@ -21,16 +21,26 @@
 </head>
 
 <body>
-  <div class="container text-center">
-    <h2>Health Tracker</h2>
-    <p>Fill up the coloured fields</p>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-8">
+        <h1>Health Tracker</h1>
+        <h5>Fill up the required fields in blue</h5>
+      </div>
+      <div class="col-4 currentTime">
+        <h5>Current Time</h5>
+        <h3 id="time"></h3>
+      </div>
+    </div>
   </div>
 
 
-  <div class="container">
+  <div class="container mt-5">
     <table class="table center">
       <form onsubmit="event.preventDefault(); onFormSubmit();" autocomplete="off" id="input">
         <thead>
+          <h3 class="text-center">Patient Form</h3>
           <tr>
             <td>
               <label>No.</label>
@@ -46,8 +56,8 @@
           </tr>
           <tr>
 
-            <td>
-              <label>Full Name</label>
+            <td colspan="5">
+              <label>Full Name<sup>*</sup></label>
               <input type="text" name="patient" id="patient" required>
             </td>
 
@@ -59,12 +69,12 @@
           </tr>
           <tr>
             <td>
-              <label>Birth Date</label>
+              <label>Birth Date<sup>*</sup></label>
               <input type="date" name="date" id="date" required>
             </td>
 
             <td>
-              <label>Admission Time</label>
+              <label>Admission Time<sup>*</sup></label>
               <input type="time" name="admission" id="admission" required>
             </td>
 
@@ -75,18 +85,18 @@
 
           <tr>
             <td>
-              <label>Temp &#8451;</label>
+              <label>Temp &#8451;<sup>*</sup></label>
               <input type="number" name="temperature" min="34" max="50" step="0.10" id="temperature" required>
             </td>
             <td>
-              <label>Symptoms</label>
+              <label>Symptoms<sup>*</sup></label>
               <input type="text" name="symptoms" id="symptoms" row="2" required>
             </td>
           </tr>
           </tr>
           <tr>
             <td>
-              <div>
+              <div class="cta">
                 <span id="submit-btn"><input class="button" type="submit" value="Submit"></span>
                 <span id="update-btn"><input class="button" type="submit" value="Update"></span>
                 <span><input class="button" type="reset" value="Reset" onclick=resetForm()></span>

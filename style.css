@@ -1,6 +1,6 @@
 * {
-    margin: 5px;
-    padding: 5px;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -12,38 +12,149 @@ body {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
+    padding: 5%;
 }
 
-.table {
-    table-layout: auto;
-    width: 100%;
+/* margins */
+.mt-1 {
+    margin-top: 10px;
 }
+
+.mt-2 {
+    margin-top: 20px;
+}
+
+.mt-3 {
+    margin-top: 30px;
+}
+
+.mt-4 {
+    margin-top: 40px;
+}
+
+.mt-5 {
+    margin-top: 50px;
+}
+
+
 
 /* typography */
 .text-center {
     text-align: center;
 }
 
-h2 {
-    font-family: 'Gloock', serif;
+.text-left, #patient {
+    text-align: start;
+}
+
+h1, .h1, .display {
+    font-size: 2.625rem;
     color: #AD7BE9;
 }
 
+h2, .h2, .header {
+    font-size: 2.125rem;
+}
+
+h3, .h3, .title {
+    font-size: 1.75rem;
+}
+
+h4, .h4, .headline {
+    font-size: 1.25rem;
+}
+
+h5, .h5, .body, .button {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+h6, .h6, .caption {
+    font-size: 0.75rem;
+    font-weight: 400;
+}
+
+strong, .strong {
+    font-weight: 600;
+}
+
+/* column */ 
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+  }
+
+/* For desktop: */
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  [class*="col-"] {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  input {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
 /* form style */
-.button{
+.table {
+    table-layout: auto;
+    width: 100%;
+}
+
+button, .button, .edit, .discharge{
     padding: 5px 30px 5px 30px;
     text-align: center;
     border-radius: 25px;
 }
 
+table, th, td {
+    border-collapse: collapse;
+}
+
+
+td {
+    padding: 25px 20px 25px 20px;
+    font-size: 1rem;
+}
+
+#healthTracker > th, #healthTracker > td  {
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+  }
+
+  #patient {
+    padding: 10px;
+  }
+
 input {
     border-style: none!important;
-    height: 6vh;
+    height: 7vh;
     text-align: center;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 1.25rem;
 }
 
 input[type="text"]:read-only, input[type="number"]:read-only {
-    background-color: #EEEEEE;
+    /* background-color: #EEEEEE; */
+    border-bottom: 1px solid black!important;
+    font-size: 1.25rem;
 }
 
 input[type="submit"] {
@@ -57,6 +168,7 @@ input:invalid {
 
 input:invalid:required {
     background-color: #BFDCE5;
+    padding: 10px;
 }
 
 input:valid {
@@ -70,4 +182,16 @@ input:focus {
 
 #update-btn {
     display: none;
+}
+
+.cta {
+    display: inline-flex;
+}
+
+.cta > span {
+    padding-right: 15px;
+}
+
+.currentTime {
+    background-color: aliceblue;
 }

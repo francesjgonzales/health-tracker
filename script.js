@@ -124,8 +124,8 @@ function insertNewRecord(data) {
     /* console.log(uniqueNumber);    */
 
     cell10 = newRow.insertCell(9);
-    cell10.innerHTML = `<button onClick="onEdit(this)">Edit</button>
-                        <button onClick="onDelete(this)"> Discharge Patient </button>`;
+    cell10.innerHTML = `<span class="edit" onClick="onEdit(this)">Edit</span>
+                        <span class="discharge" onClick="onDelete(this)"> Discharge Patient </span>`;
 
     var submitBtn = document.getElementById("submit-btn");
     submitBtn.style.display = "none";
@@ -193,3 +193,29 @@ function onDelete(td) {
         resetForm();
     }
 }
+
+
+function showTime() {
+    var time = new Date();
+    var hour = time.getHours();
+    var min = time.getMinutes();
+    var sec = time.getSeconds();
+    var checkHour = 'am';
+    if (hour >= 12) {
+        checkHour = "pm"
+        hour = hour - 12;
+    }
+    if (hour > 10) {
+        hour = hour;
+    }
+
+    if (hour < 10) {
+        min = 0 + min;
+    }
+    if (hour < 10) {
+        sec = 0 + sec;
+    }
+    document.getElementById('time').innerHTML = hour + '0' + ':' + '0' + min + ':' + sec + '' + '' + checkHour;
+}
+
+setInterval(showTime,1000); //call time based on per 1 second

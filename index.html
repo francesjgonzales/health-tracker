@@ -6,10 +6,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Bootstrap CSS -->
-  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous"> -->
-
   <link rel="stylesheet" href="./style.css">
   <link rel="icon" type="image/x-icon" href="/img/heart-pulse-solid.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,11 +18,10 @@
 
 <body>
 
-  <div class="container">
+  <div class="container mb-5">
     <div class="row">
       <div class="col-8">
         <h1>Health Tracker</h1>
-        <h5>Fill up the required fields in blue</h5>
       </div>
       <div class="col-4 currentTime">
         <h5>Current Time</h5>
@@ -37,10 +32,11 @@
 
 
   <div class="container mt-5">
-    <table class="table center">
+    <table class="table center" id="patient-form">
       <form onsubmit="event.preventDefault(); onFormSubmit();" autocomplete="off" id="input">
         <thead>
           <h3 class="text-center">Patient Form</h3>
+          <h5 class="text-center">Fill up the required fields in blue</h5>
           <tr>
             <td>
               <label>No.</label>
@@ -56,7 +52,7 @@
           </tr>
           <tr>
 
-            <td colspan="5">
+            <td colspan="2">
               <label>Full Name<sup>*</sup></label>
               <input type="text" name="patient" id="patient" required>
             </td>
@@ -130,6 +126,8 @@
         </tbody>
       </div>
     </table>
+
+
 
   </div>
 

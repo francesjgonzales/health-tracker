@@ -17,7 +17,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Gloock&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,700&display=swap"
         rel="stylesheet">
-    <title>Health Tracker</title>
+    <title>Patient Tracker</title>
 </head>
 
 <body>
@@ -28,82 +28,6 @@
 
 
     <div class="container">
-        <table class="table center">
-            <form onsubmit="event.preventDefault(); onFormSubmit();" autocomplete="off" id="input">
-                <thead>
-                    <tr>
-                        <td>
-                            <label>No.</label>
-                            <input type="number" name="number" min="1" max="100" id="number" readonly>
-                        </td>
-
-                        <td id="unique">
-                            <label>Patient ID</label>
-                            <input class="text-center" type="text" name="patientId" id="patientId">
-                        </td>
-
-
-                    </tr>
-                    <tr>
-
-                        <td>
-                            <label>Full Name</label>
-                            <input type="text" name="patient" id="patient" required>
-                        </td>
-
-                        <td>
-                            <label>Age</label>
-                            <input type="number" name="age" min="1" max="100" id="age" readonly>
-                        </td>
-
-                    </tr>
-                    <tr>
-                        <td>
-                            <label>Birth Date</label>
-                            <input type="date" name="date" id="date" required>
-                        </td>
-
-                        <td>
-                            <label>Admission Time</label>
-                            <input type="time" name="admission" id="admission" required>
-                        </td>
-
-                        <td>
-                            <label>Discharge Patient</label>
-                            <input type="text" name="discharge" id="discharge" readonly>
-                        </td>
-
-                    <tr>
-                        <td>
-                            <label>Temp &#8451;</label>
-                            <input type="number" name="temperature" min="34" max="50" step="0.10" id="temperature"
-                                required>
-                        </td>
-                        <td>
-                            <label>Symptoms</label>
-                            <input type="text" name="symptoms" id="symptoms">
-                        </td>
-                        <td>
-                            <label>Medicine</label>
-                            <textarea><input type="text" name="symptoms" id="symptoms" ></textarea>
-                        </td>
-
-                    </tr>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div>
-                                <span id="submit-btn"><input class="button" type="submit" value="Submit"></span>
-                                <span id="update-btn"><input class="button" type="submit" value="Update"></span>
-                                <span><input class="button" type="reset" value="Reset" onclick=resetForm()></span>
-                            </div>
-                        </td>
-                    </tr>
-
-                </thead>
-            </form>
-        </table>
-
 
         <table class="table center" id="healthTracker">
             <div class="container">

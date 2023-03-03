@@ -13,8 +13,6 @@ var bdayId = document.getElementById("date").value; //get the value
 var bdayString = bdayId.substring(2, 4);  //get the last 2 digit of birthyEAR
 var bdayCode = bdayString.codePointAt(0); //get the code point at the first character
 
-var age = new Date().getFullYear() - bdayId.substring(0, 4); //get patient's current age
-
 var dateUnique = (new Date().getTime()).toString(16);
 var dateUID = dateUnique.slice(7, 10); //slice to 6th and 7th char
 
@@ -23,8 +21,10 @@ var strId = stringId.substring(0, 2); //convert to
 var strUniqueId = strId.charCodeAt(1); //
 
 //final UID
-var uid = bdayString + '-' + bdayCode + '-' + dateUID + '-' + strUniqueId + '-' + age;
+var uid = bdayString + '-' + bdayCode + '-' + dateUID + '-' + strUniqueId;
 
+//get age
+var age = new Date().getFullYear() - bdayId.substring(0, 4); //get patient's current age
 
 //adding localStorage
 function onFormSubmit() {
@@ -49,7 +49,9 @@ function readFormData() {
     var formData = {};
     formData["number"] = document.getElementById("number").value;
     formData["patient"] = document.getElementById("patient").value;
-    formData["age"] = document.getElementById("age").value;
+    var bdayId = document.getElementById("date").value;
+    var age = new Date().getFullYear() - bdayId.substring(0, 4);
+    formData["age"] = document.getElementById("age").innerHTML = age;
     formData["date"] = document.getElementById("date").value;
     formData["admission"] = document.getElementById("admission").value;
     formData["medicine"] = document.getElementById("medicine").value;
@@ -65,7 +67,6 @@ function readFormData() {
     return formData;
 
 }
-
 
 function insertNewRecord(data) {
     var table = document.getElementById("healthTracker").getElementsByTagName('tbody')[0];
@@ -102,8 +103,6 @@ function insertNewRecord(data) {
     var bdayString = bdayId.substring(2, 4);  //get the last 2 digit of birthyEAR
     var bdayCode = bdayString.codePointAt(0); //get the code point at the first character
 
-    var age = new Date().getFullYear() - bdayId.substring(0, 4); //get patient's current age
-
     var dateUnique = (new Date().getTime()).toString(16);
     var dateUID = dateUnique.slice(7, 10); //slice to 6th and 7th char
 
@@ -112,16 +111,10 @@ function insertNewRecord(data) {
     var strUniqueId = strId.charCodeAt(1); //selected 2nd value to convert string to charCode
 
     //final UID
-    var uid = bdayString + '-' + bdayCode + '-' + dateUID + '-' + strUniqueId + '-' + age;
+    var uid = bdayString + '-' + bdayCode + '-' + dateUID + '-' + strUniqueId ;
 
     cell9 = newRow.insertCell(8);
     cell9.innerHTML = uid;
-
-    /* UID CODE based on Date */
-    /* var uniqueNumber=(new Date().getTime()).toString(16);
-    cell7 = newRow.insertCell(6);
-    cell7.innerHTML = document.getElementById('patientId').value = uniqueNumber; */
-    /* console.log(uniqueNumber);    */
 
     cell10 = newRow.insertCell(9);
     cell10.innerHTML = `<span class="edit" onClick="onEdit(this)">Edit</span>
@@ -150,8 +143,6 @@ function resetForm() {
     updateBtn.style.display = "none";
 }
 
-
-
 function onEdit(td) {
     selectedRow = td.parentElement.parentElement;
     document.getElementById("number").value = selectedRow.cells[0].innerHTML;
@@ -172,7 +163,8 @@ function onEdit(td) {
 function updateRecord(formData) {
     selectedRow.cells[0].innerHTML = formData.number;
     selectedRow.cells[1].innerHTML = formData.patient;
-    selectedRow.cells[2].innerHTML = formData.age;
+    var bdayId = document.getElementById("date").value;
+    selectedRow.cells[2].innerHTML = new Date().getFullYear() - bdayId.substring(0, 4);
     selectedRow.cells[3].innerHTML = formData.date;
     selectedRow.cells[4].innerHTML = formData.admission;
     selectedRow.cells[5].innerHTML = formData.medicine;
@@ -194,7 +186,7 @@ function onDelete(td) {
     }
 }
 
-
+//current time 
 function showTime() {
     var time = new Date();
     var hour = time.getHours();
@@ -215,7 +207,7 @@ function showTime() {
     if (hour < 10) {
         sec = 0 + sec;
     }
-    document.getElementById('time').innerHTML = hour + '0' + ':' + min + ':' + sec + '' + '' + checkHour;
+    document.getElementById('time').innerHTML = hour + ':' + min + ':' + sec + '' + '' + checkHour;
 }
 
 setInterval(showTime,1000); //call time based on per 1 second

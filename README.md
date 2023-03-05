@@ -1,6 +1,6 @@
 # Patient Tracker (personal project)
 
-View live site [here](https://health-tracker-site.netlify.app/)
+View live site [here](https://patient-tracker-site.netlify.app/)
 
 ## About this project
 

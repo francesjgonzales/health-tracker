@@ -4,7 +4,9 @@ View live site [here](https://patient-tracker-site.netlify.app/)
 
 ## About this project
 
-I took reference from _LearningZity's_ youtube tutorial while learning CRUD in Vanilla Javascript. This project is created to help nurses to keep track of the incoming patients who are about to be admitted in hospital. They use the form above and it results will show in a table format below. Its a simplified form where input fields are color-coded for validity-check, font-size are slightly bigger for easy readability and a clock to keep track of the current time.
+I took reference from _LearningZity's_ youtube tutorial while learning CRUD in Vanilla Javascript. The idea came about whenever my son fall sick and I have to track his temperature, fever and medicine intake. The title and naming convention used are from a nurse's perspective when admitting a patient in a hospital. The Health Tracker stores session data, which will be retained until the session timeout occurs.
+
+The form asks for core information about the patient where input fields are color-coded for validity-check, font-size are slightly bigger for easy readability only in desktop view and a clock to keep track of the current time.
 
 ## Technologies used
 
